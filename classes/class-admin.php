@@ -22,6 +22,8 @@ class Admin {
 	 */
 	public function __construct() {
 		add_filter( 'envira_gallery_gallery_themes', array( $this, 'register_gallery_themes' ) );
+		add_action( 'envira_gallery_config_box', array( $this, 'enable_see_more_metabox' ), 10, 1 );
+		add_filter( 'envira_gallery_save_settings', array( $this, 'save_meta_boxes' ), 10, 3 );
 	}
 
 	/**
@@ -53,5 +55,37 @@ class Admin {
 			'file'  => LSX_EGT_PATH,
 		);
 		return $themes;
+	}
+
+	public function enable_see_more_metabox( $post ) {
+		$gallery_data = get_post_meta( $post->ID, '_eg_gallery_data', true );
+		?>
+		<!-- see more -->
+		<tr id="envira-config-see-more-box">
+			<th scope="row">
+				<label for="envira-config-see-more"><?php esc_html_e( 'Enable See More?', 'lsx-envira-gallery-themes' ); ?></label>
+			</th>
+			<td>
+				<input id="envira-config-see-more" type="checkbox" name="_envira_gallery[see-more]" value="1" <?php checked( envira_get_config( 'see-more', $gallery_data, envira_get_config_default( 'see-more' ) ), 1 ); ?> />
+				<span class="description"><?php esc_html_e( 'Hides all images after item 5, and adds a see more hover effect on the last item.', 'envira-gallery' ); ?></span>
+			</td>
+		</tr>
+		<?php
+	}
+
+	public function save_meta_boxes( $settings, $post_id, $post ) {
+
+		// Bail out if we fail a security check.
+		if ( ! isset( $_POST['envira-gallery'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['envira-gallery'] ) ), 'envira-gallery' ) || ! isset( $_POST['_envira_gallery'] ) ) {
+			$settings;
+		}
+
+		if ( isset( $_POST['_envira_gallery']['see-more'] ) && ''!== $_POST['_envira_gallery']['see-more'] ) {
+			$settings['config']['see-more'] = $_POST['_envira_gallery']['see-more'];
+		} else {
+			$settings['config']['see-more'] = '';
+		}
+
+		return $settings;
 	}
 }
