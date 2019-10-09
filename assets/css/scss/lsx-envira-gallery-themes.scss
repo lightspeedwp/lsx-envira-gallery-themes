@@ -14,4 +14,30 @@
 			}
 		}
 	}
+
+	.envira-album-public,
+	.envira-gallery-public {
+		.envira-gallery-item {
+			&.see-more-hidden {
+				display:none;
+			}
+
+			&.see-more-item:not(.see-more-hidden) {
+				.envira-lazy:hover {
+					img {
+						opacity: 0.5;
+					}
+
+					&::after {
+						content: 'See More';
+						position: absolute;
+						top: 45%;
+						width: 100%;
+						text-align: center;
+						margin: auto 1px;
+					}
+				}
+			}
+		}
+	}
 }

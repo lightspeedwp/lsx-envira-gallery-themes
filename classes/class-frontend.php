@@ -95,7 +95,6 @@ class Frontend {
 			$this->current_theme = $data['config']['gallery_theme'];
 			$this->saved_data    = $data;
 		}
-
 		return $data;
 	}
 
@@ -134,6 +133,9 @@ class Frontend {
 	 * @return void
 	 */
 	public function gallery_output_item_classes ( $classes, $item, $i, $data ) {
+		if ( isset( $data['config']['see-more'] ) && '' !== $data['config']['see-more'] ) {
+			$classes = $this->see_more_classes( $classes, $item, $i, $data );
+		}
 		if ( '' !== $this->current_theme ) {
 			switch ( $this->current_theme ) {
 				case 'lsx-staggered-columns':
@@ -143,9 +145,8 @@ class Frontend {
 				default:
 				break;
 			}
-
-			$this->item_counter++;
 		}
+		$this->item_counter++;
 		return $classes;
 	}
 
@@ -162,6 +163,15 @@ class Frontend {
 			if ( 5 === $this->item_counter ) {
 				$this->item_counter = 0;
 			}
+		}
+		return $classes;
+	}
+
+	public function see_more_classes ( $classes, $item, $i, $data ) {
+		$classes[] = 'see-more-item';
+
+		if ( 5 < $i ) {
+			$classes[] = 'see-more-hidden';
 		}
 		return $classes;
 	}

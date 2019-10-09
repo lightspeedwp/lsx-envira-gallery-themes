@@ -4,4 +4,10 @@
 
 .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item.staggered-column-2, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item.staggered-column-2 { width: 50%; }
 
+.envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-hidden, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-hidden { display: none; }
+
+.envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-item:not(.see-more-hidden) .envira-lazy:hover img, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-item:not(.see-more-hidden) .envira-lazy:hover img { opacity: 0.5; }
+
+.envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-item:not(.see-more-hidden) .envira-lazy:hover::after, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-item:not(.see-more-hidden) .envira-lazy:hover::after { content: 'See More'; }
+
 /*# sourceMappingURL=maps/lsx-envira-gallery-themes.css.map */
