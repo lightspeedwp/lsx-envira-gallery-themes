@@ -12,4 +12,8 @@ This will create a gallery with an alternating column layout.  What ever you set
 - 2
 - 3
 
-NB Isotope needs to be disabled
+#### Suggested Configuration
+
+- Isotope - needs to be disabled
+- Crop Images? - needs to be enabled
+- Margin Below Each Image - set to 0px
