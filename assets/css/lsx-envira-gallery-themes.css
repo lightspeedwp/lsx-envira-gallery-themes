@@ -6,6 +6,6 @@
 
 .envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-hidden, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-hidden { display: none; }
 
-.envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-item a:hover::after, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-item a:hover::after { background: rgba(0, 0, 0, 0.5); content: attr(data-see-more); position: absolute; text-align: center; top: 0; bottom: 0; color: #fff; font-size: 24px; width: 100%; padding-top: 35%; margin-bottom: 10px; }
+.envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-item a:hover::after, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-item a:hover::after { background: rgba(0, 0, 0, 0.5); content: attr(data-see-more); position: absolute; text-align: center; top: 0; bottom: 0; color: #fff; font-size: 24px; width: 100%; padding-top: 32%; margin-bottom: 10px; }
 
 /*# sourceMappingURL=maps/lsx-envira-gallery-themes.css.map */
