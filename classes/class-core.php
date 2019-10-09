@@ -31,8 +31,8 @@ class Core {
 	 * Contructor
 	 */
 	public function __construct() {
-		$this->load_classes();
 		$this->load_includes();
+		$this->load_classes();
 	}
 
 	/**
@@ -69,9 +69,6 @@ class Core {
 	 * Loads the plugin functions.
 	 */
 	private function load_includes() {
-		/*require_once LSX_EGT_PATH . '/includes/functions.php';
-		require_once LSX_EGT_PATH . '/includes/conditionals.php';
-		require_once LSX_EGT_PATH . '/includes/template-tags.php';
-		require_once LSX_EGT_PATH . '/includes/shortcodes.php';*/
+		require_once LSX_EGT_PATH . '/includes/functions.php';
 	}
 }

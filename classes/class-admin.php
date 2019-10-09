@@ -2,7 +2,7 @@
 namespace lsx\envira_gallery\themes\classes;
 
 /**
- * LSX Health Plan Admin Class.
+ * Admin Class.
  *
  * @package lsx-envira-gallery-themes
  */
@@ -21,6 +21,7 @@ class Admin {
 	 * Contructor
 	 */
 	public function __construct() {
+		add_filter( 'envira_gallery_gallery_themes', array( $this, 'register_gallery_themes' ) );
 	}
 
 	/**
@@ -36,5 +37,21 @@ class Admin {
 			self::$instance = new self();
 		}
 		return self::$instance;
+	}
+
+	/**
+	 * Register Our New Themes.
+	 *
+	 * @param array $themes All registered Themes.
+	 * @return array Return out array of themes.
+	 */
+	public function register_gallery_themes( $themes ) {
+		// Add custom themes here.
+		$themes[] = array(
+			'value' => 'lsx-taggered-columns',
+			'name'  => __( 'Staggered Columns', 'lsx-envira-gallery-themes' ),
+			'file'  => __FILE__,
+		);
+		return $themes;
 	}
 }
