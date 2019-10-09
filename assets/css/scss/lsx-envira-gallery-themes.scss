@@ -22,19 +22,23 @@
 				display:none;
 			}
 
-			&.see-more-item:not(.see-more-hidden) {
-				.envira-lazy:hover {
-					img {
-						opacity: 0.5;
-					}
+			&.see-more-item {
 
-					&::after {
-						content: 'See More';
-						position: absolute;
-						top: 45%;
-						width: 100%;
-						text-align: center;
-						margin: auto 1px;
+				a {
+					&:hover {
+						&::after {
+							background:rgba(0,0,0,0.5);
+							content: attr(data-see-more);
+							position: absolute;
+							text-align: center;
+							top: 0;
+							bottom: 0;
+							color: #fff;
+							font-size: 24px;
+							width: 100%;
+							padding-top: 35%;
+							margin-bottom: 10px;
+						}
 					}
 				}
 			}

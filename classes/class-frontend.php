@@ -23,13 +23,6 @@ class Frontend {
 	public $themes = array();
 
 	/**
-	 * Holds the slug of the currently selectec theme.
-	 *
-	 * @var string
-	 */
-	public $current_theme = '';
-
-	/**
 	 * Holds a counter for use when running through the gallery items.
 	 *
 	 * @var int
@@ -40,11 +33,11 @@ class Frontend {
 	 * Contructor
 	 */
 	public function __construct() {
-		add_filter( 'envira_load_gallery_theme_url', array( $this, 'assets' ), 10, 2 );
 		add_action( 'init', array( $this, 'init' ), 10 );
-		add_filter( 'envira_images_pre_data', array( $this, 'check_gallery_theme' ), 10, 2 );
+		add_filter( 'envira_load_gallery_theme_url', array( $this, 'assets' ), 10, 2 );
 		//add_filter( 'envira_gallery_output_item_data', array( $this, 'gallery_output_item_data' ), 10, 4 );
 		add_filter( 'envira_gallery_output_item_classes', array( $this, 'gallery_output_item_classes' ), 10, 4 );
+		add_filter( 'envira_gallery_output_link_attr', array( $this, 'gallery_output_item_attr' ), 10, 5 );
 	}
 
 	/**
@@ -81,21 +74,6 @@ class Frontend {
 			$path = LSX_EGT_URL . 'assets/css/lsx-envira-gallery-themes.css';
 		}
 		return $path;
-	}
-
-	/**
-	 * Checks the theme to see if one of ours has been selected.
-	 *
-	 * @param  array $data
-	 * @param  string $gallery_id
-	 * @return void
-	 */
-	public function check_gallery_theme ( $data, $gallery_id ) {
-		if ( isset( $data['config'] ) && isset( $data['config']['gallery_theme'] ) && '' !== $data['config']['gallery_theme'] && array_key_exists( $data['config']['gallery_theme'], $this->themes ) ) {
-			$this->current_theme = $data['config']['gallery_theme'];
-			$this->saved_data    = $data;
-		}
-		return $data;
 	}
 
 	/**
@@ -136,8 +114,8 @@ class Frontend {
 		if ( isset( $data['config']['see-more'] ) && '' !== $data['config']['see-more'] ) {
 			$classes = $this->see_more_classes( $classes, $item, $i, $data );
 		}
-		if ( '' !== $this->current_theme ) {
-			switch ( $this->current_theme ) {
+		if ( isset( $data['config'] ) && isset( $data['config']['gallery_theme'] ) && '' !== $data['config']['gallery_theme'] && array_key_exists( $data['config']['gallery_theme'], $this->themes ) ) {
+			switch ( $data['config']['gallery_theme'] ) {
 				case 'lsx-staggered-columns':
 					$classes = $this->staggered_columns_classes( $classes, $item, $i, $data );
 				break;
@@ -150,6 +128,12 @@ class Frontend {
 		return $classes;
 	}
 
+	public function gallery_output_item_attr ( $attr, $id, $item, $data, $i ) {
+		if ( isset( $data['config']['see-more'] ) && '' !== $data['config']['see-more'] && 5 === $i ) {
+			$attr .= 'data-see-more="+' . count( $data['gallery'] ) . ' ' . __( 'more', 'lsx-envira-gallery-themes' ) . '"';
+		}
+		return $attr;
+	}
 
 	public function staggered_columns_filter ( $item, $id, $data, $i ) {
 		return $item;
@@ -169,6 +153,10 @@ class Frontend {
 
 	public function see_more_classes ( $classes, $item, $i, $data ) {
 		$classes[] = 'see-more-item';
+
+		if ( 5 === $i ) {
+			$classes[] = 'see-more-hover';
+		}
 
 		if ( 5 < $i ) {
 			$classes[] = 'see-more-hidden';
