@@ -1,0 +1,5 @@
+.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item { clear: none !important; }
+
+.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item.staggered-column-3, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item.staggered-column-3 { width: 33%; }
+
+.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item.staggered-column-2, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item.staggered-column-2 { width: 49%; }

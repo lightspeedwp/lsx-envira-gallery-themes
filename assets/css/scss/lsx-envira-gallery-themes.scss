@@ -1,0 +1,17 @@
+.envira-gallery-wrap {
+	&.envira-gallery-theme-lsx-staggered-columns {
+		.envira-album-public,
+		.envira-gallery-public {
+			.envira-gallery-item {
+				clear:none !important;
+
+				&.staggered-column-3 {
+					width:33%;
+				}
+				&.staggered-column-2 {
+					width:49%;
+				}
+			}
+		}
+	}
+}

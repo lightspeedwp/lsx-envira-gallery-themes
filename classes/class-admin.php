@@ -48,9 +48,9 @@ class Admin {
 	public function register_gallery_themes( $themes ) {
 		// Add custom themes here.
 		$themes[] = array(
-			'value' => 'lsx-taggered-columns',
+			'value' => 'lsx-staggered-columns',
 			'name'  => __( 'Staggered Columns', 'lsx-envira-gallery-themes' ),
-			'file'  => __FILE__,
+			'file'  => LSX_EGT_PATH,
 		);
 		return $themes;
 	}

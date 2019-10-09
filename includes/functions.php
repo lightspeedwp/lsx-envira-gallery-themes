@@ -14,7 +14,7 @@ namespace lsx\envira_gallery\themes\functions;
  */
 function get_themes() {
 	$themes = array(
-		'lsx-taggered-columns' => __( 'Staggered Columns', 'lsx-envira-gallery-themes' ),
+		'lsx-staggered-columns' => __( 'Staggered Columns', 'lsx-envira-gallery-themes' ),
 	);
 	return $themes;
 }

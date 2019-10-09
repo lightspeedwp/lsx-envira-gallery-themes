@@ -11,3 +11,5 @@ This will create a gallery with an alternating column layout.  What ever you set
 - 3
 - 2
 - 3
+
+NB Isotope needs to be disabled

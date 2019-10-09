@@ -112,12 +112,12 @@ gulp.task('wordpress-pot', function(done) {
 	return gulp.src('**/*.php')
 		.pipe(sort())
 		.pipe(wppot({
-			domain: 'lsx-health-plan',
-			package: 'lsx-health-plan',
-			bugReport: 'https://github.com/lightspeeddevelopment/lsx-health-plan/issues',
+			domain: 'lsx-envira-gallery-themes',
+			package: 'lsx-envira-gallery-themes',
+			bugReport: 'https://github.com/lightspeeddevelopment/lsx-envira-gallery-themes/issues',
 			team: 'LightSpeed <webmaster@lsdev.biz>'
 		}))
-		.pipe(gulp.dest('languages/lsx-health-plan.pot')),
+		.pipe(gulp.dest('languages/lsx-envira-gallery-themes.pot')),
 		done();
 });
 
@@ -125,17 +125,17 @@ gulp.task('wordpress-po', function(done) {
 	return gulp.src('**/*.php')
 		.pipe(sort())
 		.pipe(wppot({
-			domain: 'lsx-health-plan',
-			package: 'lsx-health-plan',
-			bugReport: 'https://github.com/lightspeeddevelopment/lsx-health-plan/issues',
+			domain: 'lsx-envira-gallery-themes',
+			package: 'lsx-envira-gallery-themes',
+			bugReport: 'https://github.com/lightspeeddevelopment/lsx-envira-gallery-themes/issues',
 			team: 'LightSpeed <webmaster@lsdev.biz>'
 		}))
-		.pipe(gulp.dest('languages/lsx-health-plan-en_EN.po')),
+		.pipe(gulp.dest('languages/lsx-envira-gallery-themes-en_EN.po')),
 		done();
 });
 
 gulp.task('wordpress-po-mo', gulp.series( ['wordpress-po'], function(done) {
-	return gulp.src('languages/lsx-health-plan-en_EN.po')
+	return gulp.src('languages/lsx-envira-gallery-themes-en_EN.po')
 		.pipe(gettext())
 		.pipe(gulp.dest('languages')),
 		done();
