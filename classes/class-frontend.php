@@ -130,7 +130,8 @@ class Frontend {
 
 	public function gallery_output_item_attr ( $attr, $id, $item, $data, $i ) {
 		if ( isset( $data['config']['see-more'] ) && '' !== $data['config']['see-more'] ) {
-			$attr .= 'data-see-more="+' . count( $data['gallery'] ) . ' ' . __( 'more', 'lsx-envira-gallery-themes' ) . '"';
+			$count = count( $data['gallery'] ) - 5;
+			$attr .= 'data-see-more="+' . $count . ' ' . __( 'more', 'lsx-envira-gallery-themes' ) . '"';
 		}
 		return $attr;
 	}
