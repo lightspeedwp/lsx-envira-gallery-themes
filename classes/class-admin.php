@@ -22,6 +22,7 @@ class Admin {
 	 */
 	public function __construct() {
 		add_filter( 'envira_gallery_gallery_themes', array( $this, 'register_gallery_themes' ) );
+		add_filter( 'envira_gallery_lightbox_themes', array( $this, 'register_envirabox_themes' ) );
 		add_action( 'envira_gallery_config_box', array( $this, 'enable_see_more_metabox' ), 10, 1 );
 		add_filter( 'envira_gallery_save_settings', array( $this, 'save_meta_boxes' ), 10, 3 );
 	}
@@ -53,6 +54,29 @@ class Admin {
 			'value' => 'lsx-staggered-columns',
 			'name'  => __( 'Staggered Columns', 'lsx-envira-gallery-themes' ),
 			'file'  => LSX_EGT_PATH,
+		);
+		return $themes;
+	}
+
+	/**
+	 * Register Our New Envira Box Themes.
+	 *
+	 * @since 1.3.0
+	 *
+	 * @param array $themes All registered Themes.
+	 * @return array
+	 */
+	public function register_envirabox_themes( $themes ) {
+		$themes[] = array(
+			'value'  => 'large',
+			'name'   => __( 'Large', 'lsx-envira-gallery-themes' ),
+			'file'   => __FILE__,
+			'config' => array(
+				'arrows'        => 'true',
+				'margins'       => array( 220, 0 ),  // top/bottom, left/right.
+				'gutter'        => '50',
+				'base_template' => 'lsx_egt_envirabox_large_template',
+			),
 		);
 		return $themes;
 	}
