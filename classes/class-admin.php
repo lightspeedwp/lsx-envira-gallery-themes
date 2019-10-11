@@ -22,7 +22,7 @@ class Admin {
 	 */
 	public function __construct() {
 		add_filter( 'envira_gallery_gallery_themes', array( $this, 'register_gallery_themes' ) );
-		add_filter( 'envira_gallery_lightbox_themes', array( $this, 'register_envirabox_themes' ) );
+		//add_filter( 'envira_gallery_lightbox_themes', array( $this, 'register_envirabox_themes' ) );
 		add_action( 'envira_gallery_config_box', array( $this, 'enable_see_more_metabox' ), 10, 1 );
 		add_filter( 'envira_gallery_save_settings', array( $this, 'save_meta_boxes' ), 10, 3 );
 	}
