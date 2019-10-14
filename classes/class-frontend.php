@@ -167,11 +167,9 @@ class Frontend {
 	}
 
 	public function see_more_classes ( $classes, $item, $i, $data ) {
-		if ( 5 < count( $data['gallery'] ) ) {
-			$classes[] = 'see-more-item';
-			if ( 5 < $i ) {
-				$classes[] = 'see-more-hidden';
-			}
+		$classes[] = 'see-more-item';
+		if ( 5 < $i ) {
+			$classes[] = 'see-more-hidden';
 		}
 		return $classes;
 	}
