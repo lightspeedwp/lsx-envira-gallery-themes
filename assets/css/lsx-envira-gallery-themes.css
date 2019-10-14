@@ -10,16 +10,6 @@
 
 .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-item:hover { opacity: .5; }
 
-.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-captioned-data, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-title, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-caption { background: #f7f7f8; padding: 10px; border: 1px solid #e7e7e8; border-top: 0 none; position: relative; clear: both; }
-
-.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-caption { margin-top: 0; border: 0; }
-
-.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-title { margin-top: 0; margin-bottom: 0; border: 0; }
-
-.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-captioned-text { margin: 0; text-align: center; color: #000; }
-
-.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-captioned-text p { margin: 0; padding: 0; }
-
 .envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-hidden, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-hidden { display: none; }
 
 .envira-gallery-wrap .envira-album-public .envira-gallery-item.see-more-item a:hover::after, .envira-gallery-wrap .envira-gallery-public .envira-gallery-item.see-more-item a:hover::after { background: rgba(0, 0, 0, 0.5); content: attr(data-see-more); position: absolute; text-align: center; top: 0; bottom: 0; color: #fff; font-size: 24px; width: 100%; padding-top: 32%; margin-bottom: 10px; }
