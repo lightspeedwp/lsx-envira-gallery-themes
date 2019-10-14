@@ -11,6 +11,13 @@
 				&.staggered-column-2 {
 					width:50%;
 				}
+				&.staggered-column-1 {
+					width:100%;
+
+					img {
+						width: 60%;
+					}
+				}
 			}
 		}
 

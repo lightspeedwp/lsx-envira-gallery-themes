@@ -4,6 +4,10 @@
 
 .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item.staggered-column-2, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item.staggered-column-2 { width: 50%; }
 
+.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item.staggered-column-1, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item.staggered-column-1 { width: 100%; }
+
+.envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-public .envira-gallery-item.staggered-column-1 img, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-public .envira-gallery-item.staggered-column-1 img { width: 60%; }
+
 .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-item:hover { opacity: .5; }
 
 .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-gallery-captioned-data, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-title, .envira-gallery-wrap.envira-gallery-theme-lsx-staggered-columns .envira-album-caption { background: #f7f7f8; padding: 10px; border: 1px solid #e7e7e8; border-top: 0 none; position: relative; clear: both; }
