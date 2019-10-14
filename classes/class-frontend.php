@@ -130,8 +130,13 @@ class Frontend {
 
 	public function gallery_output_item_attr ( $attr, $id, $item, $data, $i ) {
 		if ( isset( $data['config']['see-more'] ) && '' !== $data['config']['see-more'] ) {
-			$count = count( $data['gallery'] ) - 5;
-			$attr .= 'data-see-more="+' . $count . ' ' . __( 'more', 'lsx-envira-gallery-themes' ) . '"';
+			$total = count( $data['gallery'] );
+			if ( 5 >= $total ) {
+				$attr .= 'data-see-more="' . __( 'View', 'lsx-envira-gallery-themes' ) . '"';
+			} else {
+				$count = $total - 5;
+				$attr .= 'data-see-more="+' . $count . ' ' . __( 'more', 'lsx-envira-gallery-themes' ) . '"';
+			}
 		}
 		return $attr;
 	}
@@ -153,9 +158,11 @@ class Frontend {
 	}
 
 	public function see_more_classes ( $classes, $item, $i, $data ) {
-		$classes[] = 'see-more-item';
-		if ( 5 < $i ) {
-			$classes[] = 'see-more-hidden';
+		if ( 5 < count( $data['gallery'] ) ) {
+			$classes[] = 'see-more-item';
+			if ( 5 < $i ) {
+				$classes[] = 'see-more-hidden';
+			}
 		}
 		return $classes;
 	}
