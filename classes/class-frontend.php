@@ -170,6 +170,8 @@ class Frontend {
 		$classes[] = 'see-more-item';
 		if ( 5 < $i ) {
 			$classes[] = 'see-more-hidden';
+		} elseif ( 5 === $i ) {
+			$classes[] = 'see-more-hover';
 		}
 		return $classes;
 	}
