@@ -149,10 +149,10 @@ class Frontend {
 		$total = count( $data['gallery'] );
 
 		if ( 5 <= $total || 3 === $total ) {
-			if ( 1 === $this->item_counter || 2 === $this->item_counter || 3 === $this->item_counter ) {
-				$classes[] = 'staggered-column-3';
-			} else if ( 4 === $this->item_counter || 5 === $this->item_counter ) {
+			if ( 1 === $this->item_counter || 2 === $this->item_counter ) {
 				$classes[] = 'staggered-column-2';
+			} elseif ( 3 === $this->item_counter || 4 === $this->item_counter || 5 === $this->item_counter ) {
+				$classes[] = 'staggered-column-3';
 				if ( 5 === $this->item_counter ) {
 					$this->item_counter = 0;
 				}
