@@ -28,7 +28,7 @@ require_once LSX_EGT_PATH . '/classes/class-core.php';
  *
  * @return \lsx\envira_gallery\themes\classes\Core()
  */
-function lsx_health_plan() {
+function lsx_envira_gallery_themes() {
 	return \lsx\envira_gallery\themes\classes\Core::get_instance();
 }
-lsx_health_plan();
+lsx_envira_gallery_themes();
