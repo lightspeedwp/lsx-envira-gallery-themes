@@ -148,7 +148,7 @@ class Frontend {
 	public function staggered_columns_classes ( $classes, $item, $i, $data ) {
 		$total = count( $data['gallery'] );
 
-		if ( 5 <= $total || 3 === $total ) {
+		if ( 5 <= $total ) {
 			if ( 1 === $this->item_counter || 2 === $this->item_counter ) {
 				$classes[] = 'staggered-column-2';
 			} elseif ( 3 === $this->item_counter || 4 === $this->item_counter || 5 === $this->item_counter ) {
@@ -157,6 +157,8 @@ class Frontend {
 					$this->item_counter = 0;
 				}
 			}
+		} elseif ( 3 === $total ) {
+			$classes[] = 'staggered-column-3';
 		} elseif ( 4 === $total || 2 === $total ) {
 			$classes[] = 'staggered-column-2';
 		} elseif ( 1 === $total ) {
